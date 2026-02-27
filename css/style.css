@@ -1,0 +1,319 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: url("../Assets/BackgroundProfile.png") no-repeat;
+    background-size: 100%;
+    /* zoom */
+    background-position: 55% 15%;
+    /* geser kanan & atur tinggi */
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: 80px;
+    text-align: left;
+    margin-bottom: 90px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-content h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    margin-bottom: 30px;
+}
+
+/* ================= SECTION ================= */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background: #f1f5f9;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    max-width: 1750px;
+    margin: auto;
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ================= GRID 2 COLUMN ================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 kotak per baris */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: 0.4s;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* CARD IMAGE */
+.image-card1 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card2 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card3 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card4 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card5 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card6 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+    text-align: justify;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.timeline-item {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.4s;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #2563eb;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+    background: white;
+    color: #2563eb;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+    color: white;
+}
+
+/* ================= FORM ================= */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.form-box input,
+.form-box textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-box button {
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= LINKEDIN ================= */
+.linkedin-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.linkedin-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ================= ANIMATION ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .hero {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        /* 1 kolom di mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 34px;
+    }
+}
