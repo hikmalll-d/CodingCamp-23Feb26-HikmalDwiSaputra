@@ -9,7 +9,7 @@ body {
     color: #1e293b;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 .container {
     width: 100%;
     max-width: 1100px;
@@ -53,9 +53,7 @@ nav a:hover {
     align-items: center;
     background: url("../Assets/BackgroundProfile.png") no-repeat;
     background-size: 100%;
-    /* zoom */
     background-position: 55% 15%;
-    /* geser kanan & atur tinggi */
     color: white;
 }
 
@@ -117,7 +115,6 @@ nav a:hover {
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 kotak per baris */
     gap: 30px;
     margin-top: 40px;
 }
@@ -137,42 +134,12 @@ nav a:hover {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* CARD IMAGE */
-.image-card1 img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    transition: 0.4s ease;
-}
-
-.image-card2 img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    transition: 0.4s ease;
-}
-
-.image-card3 img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    transition: 0.4s ease;
-}
-
-.image-card4 img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    transition: 0.4s ease;
-}
-
-.image-card5 img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    transition: 0.4s ease;
-}
-
+/* ================= CARD IMAGE ================= */
+.image-card1 img,
+.image-card2 img,
+.image-card3 img,
+.image-card4 img,
+.image-card5 img,
 .image-card6 img {
     width: 100%;
     height: 220px;
@@ -180,40 +147,13 @@ nav a:hover {
     transition: 0.4s ease;
 }
 
-.image-card:hover img {
+.card:hover img {
     transform: scale(1.05);
 }
 
 .card-content {
     padding: 25px;
     text-align: justify;
-}
-
-/* ================= TIMELINE ================= */
-.timeline {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.timeline-item {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: 0.4s;
-}
-
-.timeline-item:hover {
-    transform: translateX(10px);
-}
-
-.timeline-date {
-    font-size: 14px;
-    color: #2563eb;
-    margin-bottom: 10px;
-    font-weight: bold;
 }
 
 /* ================= BUTTON ================= */
@@ -262,17 +202,65 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* ================= LINKEDIN ================= */
-.linkedin-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #2563eb;
-    font-weight: bold;
-    text-decoration: none;
+/* ================= MESSAGE RESULT CARD ================= */
+
+#message-list {
+    max-width: 500px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.linkedin-link:hover {
-    text-decoration: underline;
+.message-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.message-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2563eb;
+}
+
+.message-card p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+/* Animasi muncul */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi hilang */
+.fade-out {
+    animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
 
 /* ================= FOOTER ================= */
@@ -283,7 +271,7 @@ footer {
     padding: 20px;
 }
 
-/* ================= ANIMATION ================= */
+/* ================= SCROLL REVEAL ================= */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -310,10 +298,82 @@ footer {
 
     .grid-2 {
         grid-template-columns: 1fr;
-        /* 1 kolom di mobile */
     }
 
     .hero-content h2 {
         font-size: 34px;
+    }
+}
+
+/* ================= MESSAGE RESULT CARD ================= */
+
+#message-list {
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card utama */
+.message-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    border-left: 5px solid #2563eb;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+/* Judul */
+.message-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+/* Isi teks */
+.message-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Label bold */
+.message-card strong {
+    color: #1e293b;
+}
+
+/* Animasi muncul */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi hilang */
+.fade-out {
+    animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
     }
 }

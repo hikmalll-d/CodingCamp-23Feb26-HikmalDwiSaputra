@@ -1,34 +1,73 @@
-// Welcome message
+// ==========================
+// WELCOME MESSAGE
+// ==========================
 window.onload = function () {
     let name = prompt("Enter your name:");
     if (!name) name = "Guest";
 
-    document.getElementById("welcome-speech")
-        .innerHTML = "Hi " + name + ", I'm Hikmal Dwi Saputra";
+    const welcomeText = document.getElementById("welcome-speech");
+    if (welcomeText) {
+        welcomeText.innerHTML = "Hi " + name + ", I'm Hikmal Dwi Saputra";
+    }
 };
 
-// Form validation
-document.getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-        e.preventDefault();
 
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
-        let result = document.getElementById("result");
+// ==========================
+// CONTACT FORM (OUTPUT LANGSUNG MUNCUL, HILANG 1 MENIT)
+// ==========================
+document.addEventListener("DOMContentLoaded", function () {
 
-        if (name === "" || email === "" || message === "") {
-            result.style.color = "red";
-            result.innerHTML = "Please fill all fields!";
-            return;
-        }
+    const form = document.getElementById("contact-form");
+    const messageList = document.getElementById("message-list");
 
-        result.style.color = "green";
-        result.innerHTML = "Message sent successfully!";
-        this.reset();
-    });
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-// Scroll reveal
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            // ==========================
+            // BUAT CARD BARU
+            // ==========================
+            const messageCard = document.createElement("div");
+            messageCard.classList.add("message-card");
+
+            messageCard.innerHTML = `
+                <h3>New Message</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong> ${message}</p>
+            `;
+
+            messageList.appendChild(messageCard);
+
+            form.reset();
+
+            // ==========================
+            // HILANG SETELAH 1 MENIT
+            // ==========================
+            setTimeout(function () {
+                messageCard.classList.add("fade-out");
+
+                setTimeout(function () {
+                    messageCard.remove();
+                }, 600); // tunggu animasi fade out selesai
+            }, 60000); // 1 menit
+        });
+    }
+});
+
+
+// ==========================
+// SCROLL REVEAL
+// ==========================
 function reveal() {
     let reveals = document.querySelectorAll(".reveal");
 
